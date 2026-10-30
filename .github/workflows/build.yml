@@ -41,16 +41,18 @@ jobs:
       - name: Configure CMake
         run: |
           cmake -S . -B build -G Ninja \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DBUILD_TESTING=OFF \
-            -DYUZU_TESTS=OFF \
-            -DENABLE_WERROR=OFF \
-            -DYUZU_ROOM=OFF \
-            -DYUZU_CMD=OFF \
-            -DENABLE_LIBUSB=OFF \
-            -Denet_FORCE_BUNDLED=ON \
-            -Dlibusb_FORCE_BUNDLED=ON \
-            -DVulkanMemoryAllocator_FORCE_BUNDLED=ON
+                    -DCMAKE_BUILD_TYPE=Release \
+                    -DBUILD_TESTING=OFF \
+                    -DYUZU_TESTS=OFF \
+                    -DENABLE_WERROR=OFF \
+                    -DYUZU_ROOM=OFF \
+                    -DYUZU_CMD=OFF \
+                    -DENABLE_LIBUSB=OFF \
+                    -Denet_FORCE_BUNDLED=ON \
+                    -Dlibusb_FORCE_BUNDLED=ON \
+                    -DVulkanMemoryAllocator_FORCE_BUNDLED=ON \
+                    -DVulkanHeaders_FORCE_BUNDLED=ON \
+                    -DVulkanUtilityLibraries_FORCE_BUNDLED=ON
 
       - name: Build
         run: ninja -C build yuzu
